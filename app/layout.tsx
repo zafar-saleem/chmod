@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/header";
-import { Navigation } from "@/components/navigation";
 import { GlobalStyles } from "@/theme/globals";
 import Providers from "./styled-providers";
 
@@ -19,9 +18,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <GlobalStyles />
-          <Header>
-            <Navigation />
-          </Header>
+          <Header />
           {children}
         </Providers>
       </body>

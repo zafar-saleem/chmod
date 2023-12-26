@@ -1,7 +1,10 @@
-import React from "react"
+"use client";
 
-export const Header = ({ children }: React.PropsWithChildren) => {
+import React from "react";
+import * as Styled from "./header.styles";
+
+export const Header = () => {
   return (
-    <div>{children}</div>
+    <Styled.Title>chmod</Styled.Title>
   )
 }

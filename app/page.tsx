@@ -1,41 +1,28 @@
 "use client";
 
-import { Card } from "@/components/card";
-import { motion } from "framer-motion";
+import { CommandPreview } from "@/components/command-preview";
+import { FieldSet } from "@/components/field-set";
+import { Footer } from "@/components/footer";
+import { Main } from "@/components/main";
+import { Table } from "@/components/table";
+import Link from "next/link";
 import React from "react";
 
 export default function Home() {
-  React.useEffect(() => {
-    const fetcher = async () => {
-      const request = await fetch("/api?message='GET Request'", {
-        headers: {
-          "content-type": "application/json"
-        }
-      });
-      const json = await request.json();
-      console.log(json);
-    }
-
-    const post = async () => {
-      const request = await fetch("/api", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({ message: "POST request" }),
-      });
-      const json = await request.json();
-      console.log(json);
-    }
-    fetcher();
-    post();
+  const [values, updateValues] = React.useState({
+    read: 0,
+    write: 0,
+    execute: 0,
   });
-  
+
+  console.log(values);
+
   return (
-    <main>
-      <motion.div exit={{ opacity: 0 }}>
-        <Card title="Home page title" contents="Home page contents" />
-      </motion.div>
-    </main>
+    <Main>
+      <FieldSet {...values} updateValues={updateValues} />
+      <CommandPreview key={JSON.stringify(values)} {...values} />
+      <Table />
+      <Footer>Made by <Link href="https://zafarsaleem.com">Zafar Saleem</Link></Footer>
+    </Main>
   )
 }

@@ -1,0 +1,32 @@
+import { Props } from "./interfaces";
+import * as Styled from "./field-set.styles";
+
+const validationValues = [0, 1, 2, 3, 4, 5, 6, 7];
+
+export const FieldSet = ({ updateValues, ...props }: Props) => {
+
+  const validate = (type: string, event: any) => {
+    console.log("ASDASDSA")
+    if (!validationValues.includes(parseInt(event.target.value))) return;
+
+    updateValues({
+      ...props,
+      [type]: event.target.value
+    })
+  }
+
+  return (
+    <Styled.Grid>
+      <Styled.Labels>
+        <Styled.Label>Read</Styled.Label>
+        <Styled.Label>Write</Styled.Label>
+        <Styled.Label>Execute</Styled.Label>
+      </Styled.Labels>
+      <Styled.Fields>
+        <Styled.Field defaultValue={0} type="number" onChange={(event: any) => validate("read", event)} />
+        <Styled.Field defaultValue={0} type="number" onChange={(event: any) => validate("write", event)} />
+        <Styled.Field defaultValue={0} type="number" onChange={(event: any) => validate("execute", event)} />
+      </Styled.Fields>
+    </Styled.Grid>
+  )
+}
