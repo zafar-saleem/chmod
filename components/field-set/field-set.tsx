@@ -23,9 +23,9 @@ export const FieldSet = ({ updateValues, ...props }: Props) => {
         <Styled.Label>Execute</Styled.Label>
       </Styled.Labels>
       <Styled.Fields>
-        <Styled.Field defaultValue={0} type="number" onChange={(event: any) => validate("read", event)} />
-        <Styled.Field defaultValue={0} type="number" onChange={(event: any) => validate("write", event)} />
-        <Styled.Field defaultValue={0} type="number" onChange={(event: any) => validate("execute", event)} />
+        <Styled.Field inputMode="numeric" defaultValue={0} type="number" onChange={(event: any) => validate("read", event)} />
+        <Styled.Field inputMode="numeric" defaultValue={0} type="number" onChange={(event: any) => validate("write", event)} />
+        <Styled.Field inputMode="numeric" defaultValue={0} type="number" onChange={(event: any) => validate("execute", event)} />
       </Styled.Fields>
     </Styled.Grid>
   )
