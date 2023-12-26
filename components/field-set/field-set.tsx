@@ -6,7 +6,6 @@ const validationValues = [0, 1, 2, 3, 4, 5, 6, 7];
 export const FieldSet = ({ updateValues, ...props }: Props) => {
 
   const validate = (type: string, event: any) => {
-    console.log("ASDASDSA")
     if (!validationValues.includes(parseInt(event.target.value))) return;
 
     updateValues({
