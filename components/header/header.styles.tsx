@@ -8,5 +8,6 @@ export const Title = styled.h1`
   @media screen and (max-width: ${props => props.theme.breakpoints.s}) {
     padding: 0 1rem;
     text-align: left;
+    margin-bottom: 5rem;
   }
 `;
