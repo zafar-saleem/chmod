@@ -11,7 +11,7 @@ export const Grid = styled.div`
 export const Labels = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  text-align: center;
+  text-align: left;
   gap: 1rem;
 `;
 

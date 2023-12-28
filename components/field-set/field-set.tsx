@@ -17,9 +17,9 @@ export const FieldSet = ({ updateValues, ...props }: Props) => {
   return (
     <Styled.Grid>
       <Styled.Labels>
-        <Styled.Label>Read</Styled.Label>
-        <Styled.Label>Write</Styled.Label>
-        <Styled.Label>Execute</Styled.Label>
+        <Styled.Label>Owner</Styled.Label>
+        <Styled.Label>Group</Styled.Label>
+        <Styled.Label>Everyone Else</Styled.Label>
       </Styled.Labels>
       <Styled.Fields>
         <Styled.Field inputMode="numeric" defaultValue={0} type="number" onChange={(event: any) => validate("read", event)} />
